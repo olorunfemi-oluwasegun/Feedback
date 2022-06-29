@@ -1,0 +1,50 @@
+{% extends "shared/base.html" %}
+
+{% block title %}
+    <title>Feedbackr</title>
+{% endblock %}
+
+{% block content %}
+<div class="container row center mx-auto mt-5">
+<h1 style="color: darkcyan; font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: center; height: fit-content;">FeedMeBack</h1>
+<h2 style="color: darkcyan; font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: center; height: fit-content;">Welcome to the FeedMeback Hosptality app</h2>
+
+    <div class="row center container col-8 mt-5 mb-4 mx-auto">
+            <p style="color: #1182cb; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;  font-size: large; text-align: justify; height: fit-content;"> Here you can give feedback on services and amenities as well as your overall experience while staying with us</p>
+            <p style="color: #1182cb; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: large; text-align: justify; height: fit-content;"> You can do this in one of two ways (or both should you choose to :) One click after the other though).</p>
+            <p style="color: #1182cb; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: large; text-align: justify; height: fit-content;"> First way you can provide feedback is by leaving us a recorded message through your zoom application.</p>
+            <p style="color: #1182cb; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: large; text-align: justify; height: fit-content;"> The other way is to write your feedback in with a short video attachment usually less than 5 second long.</p>
+</div>
+<hr>
+    <div class="row center container col-12 mt-5 mb-2 mx-auto">
+  
+        <div class="d-flex justify-content-center p-0 mb-5">
+            <br>
+            <br>
+            <a style="border: 2px solid #1182cb; color: darkcyan; background-color: azure; font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: large; text-align: center; height: fit-content;" class="btn me-md-2" href="https://us06web.zoom.us/j/89954236062?pwd=dmI4cWIvamlDdC9BeDAyd0IxbUNjQT09" role="button">Feedback with Zoom</a>
+            <a style="border: 2px solid #1182cb; color: darkcyan; background-color: azure; font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: large; text-align: center; height: fit-content;" class="btn me-md-2" role="button" onclick="myFunction('Demo1')">?</a>
+            <div id="Demo1" class="w3-hide w3-animate-zoom"><p style="color: #1182cb; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: x-small; text-align: center; height: fit-content;">Use this option if you have Zoom installed on your device. You will be redirected into your Zoom app from where your session will be automatically recorded. Once you end the session or leave the meeting your session will be recorded and will be sent to the appropriate team for neccesary action.</p></div>
+        </div>
+        <br>
+        <br>
+
+        <div class="d-flex justify-content-center p-0 mt-5">
+            <br>
+            <br>
+            <a style="border: 2px solid #1182cb; color: darkcyan; background-color: azure; font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: large; text-align: center; height: fit-content;" class="btn me-md-2" href="" role="button" id="ohnezoom">Feedback without Zoom</a>
+            <a style="border: 2px solid #1182cb; color: darkcyan; background-color: azure; font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: large; text-align: center; height: fit-content;" class="btn me-md-2" role="button" onclick="myFunction('Demo2')">?</a>
+            <div id="Demo2" class="w3-hide w3-animate-zoom"><p style="color: #1182cb; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: x-small; text-align: center; height: fit-content;">Use this option if you dont have zoom installed on your device. You would have to write in your feedback in the text area provided. After which youd be able to upload a brief video not longer than 4 seconds in cases where you need to share something visual. To upload something longer, you need to use the 'with Zoom' option.</p></div>
+        </div>                
+    </div>
+    <script>
+        function myFunction(id) {
+            var fix = document.getElementById(id);
+            if (fix.className.indexOf("w3-show") == -1) {
+                fix.className += " w3-show";
+            } else {
+                fix.className = fix.className.replace(" w3-show", "");
+            }
+        }
+
+    </script>
+{% endblock %}

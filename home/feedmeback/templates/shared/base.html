@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        * {
+        box-sizing: border-box;
+        }
+    
+        body {
+        font: 16px Arial;  
+        }
+    
+        .autocomplete {
+        position: relative;
+        display: inline-block;
+        }
+    
+        input {
+        border: 1px solid transparent;
+        background-color: gold;
+        padding: 10px;
+        font-size: 16px;
+        }
+    
+        input[type=text] {
+        background-color: rgb(238, 34, 34);
+        width: 100%;
+        }
+    
+        input[type=submit] {
+        background-color: greenyellow;
+        color: #fff;
+        cursor: pointer;
+        }
+    
+        .autocomplete-items {
+        position: absolute;
+        border: 1px solid #d4d4d4;
+        border-bottom: none;
+        border-top: none;
+        z-index: 99;
+        top: 100%;
+        left: 0;
+        right: 0;
+        }
+    
+        .autocomplete-items div {
+        padding: 10px;
+        cursor: pointer;
+        background-color: #fff; 
+        border-bottom: 1px solid #d4d4d4; 
+        }
+    
+    
+        .autocomplete-items div:hover {
+        background-color: #e9e9e9; 
+        }
+    
+    
+        .autocomplete-active {
+        background-color: DodgerBlue !important; 
+        color: #ffffff; 
+        }
+        </style>
+    {% block title %}
+    {% endblock %}
+</head>
+
+<body>
+    <style>
+        body {
+            font-family: "Open Sans", sans-serif;
+            background-image: url_for('static', path='images/bg.jpg');
+            background-size: cover;
+            position: relative;
+            background-color: whitesmoke;
+        }
+    </style>
+    {% block content %}
+    {% endblock %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    {% block scripts %}
+    {% endblock %}
+
+
+</body>
+</html>

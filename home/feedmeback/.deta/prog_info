@@ -1,0 +1,1 @@
+{"id":"4a1ba2ad-1fcb-45d0-bbb1-89999f57cc78","space":24070,"runtime":"python3.9","name":"feedmeback","path":"61ffbq","project":"a0k234l6","account":"144798365827","region":"eu-central-1","deps":["fastapi","uvicorn","deta","python-multipart","requests","jinja2","aiofiles"],"envs":null,"public":true,"log_level":"debug","cron":""}
