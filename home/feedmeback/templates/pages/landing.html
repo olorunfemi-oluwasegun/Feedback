@@ -1,0 +1,43 @@
+{% extends "shared/base.html" %}
+
+{% block title %}
+    <title>Feedbackr | Admin</title>
+{% endblock %}
+
+{% block content %}
+<h1 style="color: darkcyan; font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: center; height: fit-content;">FeedMeBack</h1>
+<a style="color: darkcyan; font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align:end; height: fit-content;" href = "http://127.0.0.1:8000/" onclick="blast()">Logout</a>
+<p style="text-align: center;" id="ollo"></p>
+<p style="color: darkcyan; font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: center; height: fit-content; font-size: small;" id="away">{{msg}}</p>
+<div class="container col-8 row center mx-auto mt-5 p-5" style="text-align:center">
+    <p style="text-align: center;">Feedback:</p>
+    <p style="text-align: justify;">{{message_one}}</p>
+</div>
+<div class="container col-8 row center mx-auto mt-5 p-5" style="text-align:center">
+    <p style="text-align: justify;">{{message_two}}</p>
+    <a style="text-align: justify;" href="{{message_three}}">{{message_three}}</a>
+</div>
+
+<script>
+    var stock = document.getElementById("away");
+    stock.onmousemove = function() {
+        stock.innerHTML = " ";
+    }
+
+    function blast() {
+        sessionStorage.clear()
+    }
+
+    window.onload = function() {
+        var user = sessionStorage.getItem("user");
+        var hymn = document.getElementById("ollo");
+        hymn.innerHTML = "You are logged in as " + user;
+    }
+
+    window.onmousemove = function() {
+        var symn = document.getElementById("ollo");
+        symn.innerHTML = " ";        
+
+    }
+</script>
+{% endblock %}

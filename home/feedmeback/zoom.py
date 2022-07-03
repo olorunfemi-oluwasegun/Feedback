@@ -48,8 +48,8 @@ class Zoom:
 
 
 zoom = Zoom(API_KEY, API_SECRET)
-jwt_token: bytes = zoom.generate_jwt_token()
-jwt_token_str = jwt_token.decode('UTF-8')
+#jwt_token: bytes = zoom.generate_jwt_token()
+#jwt_token_str = jwt_token.decode('UTF-8')
 
 conn = http.client.HTTPSConnection("api.zoom.us")
 headers = {
@@ -73,6 +73,8 @@ for i in range(0,2):
     poom = date.today()
     files.append(link)
 
+
+cluster = []
 for link in files:
     authorized_url = link + "?access_token=" + "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOm51bGwsImlzcyI6IlgyMzFFcjhfUW5xS3VxTmN6MHhETHciLCJleHAiOjE2NzI1Mjc1NDAsImlhdCI6MTY1NTQ3MzM0N30.0n8ph_QaekvRxcTUr0zZotD6_9FPVXqW65TtEIQQtOI"
     endpoint = 'https://api.assemblyai.com/v2/transcript'
@@ -87,20 +89,33 @@ for link in files:
     }
 
     resp = requests.post(endpoint, json=json, headers=heads)
-    status_point = 'https://api.assemblyai.com/v2/transcript/' + resp.json()['id']
+    lupita = resp.json()
+    nyongo = str(lupita.get("id"))
+    status_point = 'https://api.assemblyai.com/v2/transcript/' + nyongo
 
     status_header = {'authorization':ASSEMBLY_AI_TOKEN} 
 
     status_check = requests.get(status_point, headers=status_header)
 
-    while status_check.json()['status'] in ['queued', 'processing']:
+    while status_check.json().get("status") in ['queued', 'processing']:
         status_check = requests.get(status_point, headers=status_header)
         time.sleep(5)
         continue
+    
+    if status_check.json().get("text") in cluster:
+        continue
+    else: 
+        cluster.append(status_check.json().get("text"))
+        cluster.append(f"To watch this video, click here: {link}")
 
+    #return cluster
   #  print(status_check.json()['status'])
-    print('\n', status_check.json()['text'])
+    #print('\n', status_check.json()['text'])
   #  print('\n', status_check.json())
+#print(cluster)
+
+#print(lupita)
+#print(nyongo)
 
 
 

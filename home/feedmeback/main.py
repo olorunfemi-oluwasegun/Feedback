@@ -39,6 +39,7 @@ def include_path(app):
 
 #def configure_static(app):
   #  app.mount("/statik", StaticFiles(directory="statik"), name="statik")
+  #fllfllfllfflllfllfllfflfllfllfllfffllfffllllflfll
 
 def start_up():
     app = FastAPI(title=settings.PROJECT_NAME, version=settings.PROJECT_VERSION)

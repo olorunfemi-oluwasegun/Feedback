@@ -5,3 +5,5 @@ python-multipart
 requests
 jinja2
 aiofiles
+authlib
+python-dotenv

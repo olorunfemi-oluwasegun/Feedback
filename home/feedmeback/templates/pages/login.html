@@ -1,33 +1,36 @@
 {% extends "shared/base.html" %}
 
 {% block title %}
-    <title>Feedbackr</title>
+    <title>Feedbackr | Admin Login</title>
 {% endblock %}
 
 {% block content %}
 <h1 style="color: darkcyan; font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: center; height: fit-content;"><a style="color: darkcyan; font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align:end; height: fit-content; text-decoration: none;" href = "https://feedmeback.deta.dev/">FeedMeBack</a></h1>
 <a style="color: darkcyan; font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align:end; height: fit-content;" href = "https://feedmeback.deta.dev/">Return to home</a>
 <div class="container col-8 row center mx-auto mt-5 p-5" style="text-align:center">
-    <form action="https://feedmeback.deta.dev/userformatted" enctype="multipart/form-data" method="post">
-    <p style="text-align: center"> Write in your feedback in the text area provided and upload a tiny video not longer than 4 seconds.</p>
+    <form action="http://127.0.0.1:8000/login/administrator" enctype="multipart/form-data" method="post">
+    <p style="text-align: center"> Enter your admin login details</p>
         <br>
         <div class="col-4 row center mx-auto mt-1 p-2" style="text-align: center">
-        <label for="fullname" style="text-align: center" class="mb-1">Enter your fullname here:</label>
-        <input type="text" id="fullname" name="fullname">
+        <label for="username" style="text-align: center" class="mb-1">Username:</label>
+        <input type="text" id="username" name="username" required>
         </div>        
         <div class="col-4 row center mx-auto mt-1 p-2" style="text-align: center">
-        <label for="fullname" style="text-align: center" class="mb-1">Enter your email address here:</label>
-        <input type="text" id="email" name="email" style="background-color: white;">
+        <label for="password" style="text-align: center" class="mb-1">Password:</label>
+        <input type="password" id="password" name="password" style="background-color: white;" required>
         </div>
         <br>
-    <label for="feedbacktxt" style="text-align: center">Provide text feedback here:</label>
-        <br>
-        <textarea id="feedbacktxt" name="feedbacktxt" rows="9" cols="90"></textarea>
-        <br>
-        <input name="file" type="file">
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit" onclick="rollie()">
     </form>
-    <p style="text-align: center;">{{msg}}</p>
 </div>
 
+
+<script>
+    function rollie() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        sessionStorage.setItem("user", username);
+        sessionStorage.setItem("password", password);
+    }
+</script>
 {% endblock %}

@@ -15,7 +15,7 @@ mooo = literal_eval(totry_json)
 lop = json.dumps(mooo, indent=4, sort_keys=True)
 dayy = json.loads(lop)
 sayy = dayy["recording_files"]
-files = {}
+linkz = []
 for i in range(len(sayy)):
     hayy = sayy[i]
     link = hayy["download_url"]
@@ -25,8 +25,11 @@ for i in range(len(sayy)):
     print(link)
     print(dayz)
     print(poom)
+    linkz.append(link)
 
-#hayy = sayy[1]
-#fetchy = json.loads(totry_json)
-#show = json.dumps(fetchy, indent=4, sort_keys=True)
-#print(hayy["download_url"])
+hayy = sayy[1]
+fetchy = json.loads(totry_json)
+show = json.dumps(fetchy, indent=4, sort_keys=True)
+print(hayy["download_url"])
+print("----------------------------------------------------------------------------------------------------------------------------")
+print(linkz)
